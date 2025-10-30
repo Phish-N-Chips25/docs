@@ -50,10 +50,8 @@ This document provides standardized weight recommendations for all phishing dete
 | **URL: Very long length (>75)** | 15 | 25 | +67% | Low-Med | Can be legitimate (tracking parameters, analytics) |
 | **URL: Excessive subdomains (≥3)** | 15 | 35 | +133% | Medium | Deceptive tactic to mimic legitimate domains (e.g., login.secure.paypal-verify.com) |
 | **URL: Domain very new (<180 days)** | 100 | 90 | -10% | Critical | Strong phishing indicator, throwaway domains |
-| **URL: Domain less than a year (180-365 days)** | 50 | 50 | 0% | Medium | Moderate risk, needs other signals to confirm |
 | **URL: Domain age > 1 year** | 5 | 0 | -100% | Neutral | Should NOT increase score, this is a trust signal |
 | **URL: Not whitelisted domain** | 50 | 40 | -20% | Medium | Most legitimate domains aren't whitelisted, too harsh penalty |
-| **URL: Not whitelisted IP** | 50 | 60 | +20% | High | IP address + not whitelisted = highly suspicious combination |
 
 ### Top Priority Changes:
 1. ✅ **Homograph detection**: 8 → 40 (+400%) - Significantly underweighted
