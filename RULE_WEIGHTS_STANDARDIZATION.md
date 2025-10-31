@@ -41,15 +41,15 @@ This document provides standardized weight recommendations for all phishing dete
 
 ### Detailed Recommendations
 
-| Rule Name | Current | Recommended | Change | Severity | Rationale |
-|-----------|---------|-------------|--------|----------|-----------|
-| **URL: '@' character present** | 10 | 30 | +200% | Medium | Direct obfuscation tactic, hides true domain after @ symbol |
-| **URL: Host is an IP address** | 30 | 70 | +133% | High | Very suspicious, bypasses DNS, common in phishing campaigns |
-| **URL: Likely homograph (IDN/punycode)** | 8 | 40 | +400% | Medium | Advanced attack technique, visual deception (e.g., аpple.com) |
-| **URL: Many hyphens or digits** | 6 | 20 | +233% | Low | Weak indicator alone, legitimate sites can have hyphens |
-| **URL: Very long length (>75)** | 15 | 25 | +67% | Low-Med | Can be legitimate (tracking parameters, analytics) |
-| **URL: Excessive subdomains (≥3)** | 15 | 35 | +133% | Medium | Deceptive tactic to mimic legitimate domains (e.g., login.secure.paypal-verify.com) |
-| **URL: Domain very new (<180 days)** | 100 | 90 | -10% | Critical | Strong phishing indicator, throwaway domains |
+| Rule Name | Current | Recommended | Change | Severity | Rationale | Implementado |
+|-----------|---------|-------------|--------|----------|-----------|--------------|
+| **URL: '@' character present** | 10 | 30 | +200% | Medium | Direct obfuscation tactic, hides true domain after @ symbol | X            |
+| **URL: Host is an IP address** | 30 | 70 | +133% | High | Very suspicious, bypasses DNS, common in phishing campaigns | X            |
+| **URL: Likely homograph (IDN/punycode)** | 8 | 40 | +400% | Medium | Advanced attack technique, visual deception (e.g., аpple.com) |              |
+| **URL: Many hyphens or digits** | 6 | 20 | +233% | Low | Weak indicator alone, legitimate sites can have hyphens | X            |
+| **URL: Very long length (>75)** | 15 | 25 | +67% | Low-Med | Can be legitimate (tracking parameters, analytics) | X            |
+| **URL: Excessive subdomains (≥3)** | 15 | 35 | +133% | Medium | Deceptive tactic to mimic legitimate domains (e.g., login.secure.paypal-verify.com) | X            | 
+| **URL: Domain very new (<180 days)** | 100 | 90 | -10% | Critical | Strong phishing indicator, throwaway domains |              | 
 
 ### Top Priority Changes:
 1. ✅ **Homograph detection**: 8 → 40 (+400%) - Significantly underweighted
