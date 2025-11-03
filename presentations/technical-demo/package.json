@@ -1,0 +1,37 @@
+{
+  "name": "phish-n-chips-technical-demo",
+  "version": "1.0.0",
+  "description": "Technical demonstration presentation for Phish'n'Chips projects (Java+Drools and Python+Prolog)",
+  "scripts": {
+    "concat": "./concat-slides.sh",
+    "prebuild": "npm run concat",
+    "build": "npm run build:pdf && npm run build:pptx && npm run build:html",
+    "build:pdf": "marp output/presentation.md --pdf --allow-local-files --no-stdin -o output/presentation.pdf",
+    "build:pptx": "marp output/presentation.md --pptx --allow-local-files --no-stdin -o output/presentation.pptx",
+    "build:html": "marp output/presentation.md --html --no-stdin -o output/presentation.html",
+    "watch": "npm run concat && marp output/presentation.md --watch --html --no-stdin -o output/presentation.html",
+    "preview": "npm run concat && marp output/presentation.md --preview --no-stdin",
+    "open:pdf": "open output/presentation.pdf",
+    "open:pptx": "open output/presentation.pptx",
+    "open:html": "open output/presentation.html",
+    "clean": "rm -rf output",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "presentation",
+    "marp",
+    "phishing-detection",
+    "expert-systems",
+    "drools",
+    "prolog"
+  ],
+  "author": "Team 10 - Phish'N'Chips25",
+  "license": "MIT",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Phish-N-Chips25/docs.git"
+  }
+}

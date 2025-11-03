@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+
+# npm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Output folder (all generated files including presentation.md)
+output/
+
+# PowerPoint temporary files
+~$*.pptx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
