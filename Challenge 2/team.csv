@@ -1,0 +1,11 @@
+tech_id,level,skills,work_start_h,work_end_h,on_call
+Tech_01,Senior,Security Hardening;Backup & Recovery;Exchange;SQL Server,9,17,0
+Tech_02,Junior,Patch Management;IIS;SQL Server;Security Hardening;Backup & Recovery,9,17,0
+Tech_03,Mid,Patch Management;Windows Server;Security Hardening,9,17,0
+Tech_04,Senior,IIS;SQL Server;Windows Server,9,17,0
+Tech_05,Senior,SQL Server;Patch Management;Exchange;IIS;Backup & Recovery,9,17,0
+Tech_06,Senior,Active Directory;Patch Management;Backup & Recovery;IIS;Exchange,9,17,0
+Tech_07,Senior,Security Hardening;IIS;SQL Server,9,17,1
+Tech_08,Mid,Windows Server;Exchange;Patch Management;SQL Server;Backup & Recovery,9,17,1
+Tech_09,Junior,Exchange;Active Directory;SQL Server;Security Hardening;Backup & Recovery,9,17,1
+Tech_10,Senior,Active Directory;Security Hardening;Patch Management;Backup & Recovery,9,17,0
