@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#0a0b0d"/>
+  <g stroke="#b8ff3a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fish body as angular circuit -->
+    <path d="M5 16 L12 11 L22 11 L26 16 L22 21 L12 21 Z"/>
+    <!-- tail -->
+    <path d="M26 16 L30 12 M26 16 L30 20"/>
+    <!-- eye -->
+    <circle cx="14" cy="15" r="1" fill="#b8ff3a"/>
+    <!-- circuit trace on body -->
+    <path d="M17 14 L20 14 M17 18 L20 18"/>
+  </g>
+</svg>

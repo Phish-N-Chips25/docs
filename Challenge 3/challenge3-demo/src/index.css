@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --grid-line: rgba(31, 29, 26, 0.035);
+    --phosphor: #06b6d4;
+    --paper-bg: #ffffff;
+    --paper-bg-2: #f5f5f3;
+  }
+
+  html, body, #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--paper-bg);
+    background-image:
+      radial-gradient(ellipse at 18% 0%, rgba(103, 232, 249, 0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 82% 100%, rgba(103, 232, 249, 0.04) 0%, transparent 55%);
+    color: #1f1d1a;
+    font-feature-settings: "ss01", "ss02", "cv01";
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Esconde a scrollbar interna dos slides — modo deck mais clean */
+  [data-slide-scroll="true"]::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  [data-slide-scroll="true"] {
+    scrollbar-width: none;
+  }
+
+  ::selection {
+    background: rgba(103, 232, 249, 0.20);
+    color: #1f1d1a;
+  }
+
+  /* Scrollbar subtil — quase invisível em tema claro */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(31, 29, 26, 0.12);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(31, 29, 26, 0.22);
+  }
+}
+
+@layer components {
+  /* Fundo com grelha subtil usado em secções-chave */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* Eyebrow — pequeno rótulo mono acima dos títulos */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-widest text-phosphor;
+  }
+
+  .eyebrow-muted {
+    @apply font-mono text-xs uppercase tracking-widest text-paper-400;
+  }
+
+  /* Títulos editorais */
+  .display-xl {
+    @apply font-display font-light leading-[0.95] tracking-tight;
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  }
+
+  .display-lg {
+    @apply font-display font-light leading-[1] tracking-tight;
+    font-variation-settings: "opsz" 80, "SOFT" 0;
+  }
+
+  /* Cartão clean — branco com borda subtil + hover 3D */
+  .forensic-card {
+    @apply relative rounded-2xl border border-ink-700 bg-white;
+    box-shadow:
+      0 1px 3px rgba(31, 29, 26, 0.06),
+      0 4px 16px -4px rgba(31, 29, 26, 0.08);
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .forensic-card:hover {
+    transform: perspective(900px) rotateX(-2deg) rotateY(1.5deg) translateY(-3px);
+    box-shadow:
+      0 2px 6px rgba(31, 29, 26, 0.07),
+      0 12px 32px -6px rgba(31, 29, 26, 0.13);
+  }
+
+  .forensic-card::before,
+  .forensic-card::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--phosphor);
+    opacity: 0.55;
+  }
+  .forensic-card::before {
+    top: 8px;
+    left: 8px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+  }
+  .forensic-card::after {
+    bottom: 8px;
+    right: 8px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+  }
+
+  /* Terminal-style inline tag */
+  .term-tag {
+    @apply font-mono text-[0.7rem] uppercase tracking-widest px-2.5 py-1 rounded-full border border-phosphor/45 text-phosphor-dark bg-phosphor/10;
+  }
+
+  /* Pílula pastel genérica */
+  .pastel-chip {
+    @apply font-mono text-[0.7rem] uppercase tracking-widest px-3 py-1.5 rounded-full border border-ink-600/60 text-paper-300 bg-white/50;
+  }
+
+  /* Secção com offset de topo para a nav fixa */
+  .section-anchor {
+    scroll-margin-top: 80px;
+  }
+
+  /* Linha horizontal dupla decorativa */
+  .rule-dual {
+    background-image:
+      linear-gradient(to bottom, currentColor 1px, transparent 1px),
+      linear-gradient(to bottom, currentColor 1px, transparent 1px);
+    background-position: top, bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+  }
+
+  /* Números tabulares para métricas */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
