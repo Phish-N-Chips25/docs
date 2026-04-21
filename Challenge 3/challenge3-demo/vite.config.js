@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages project site: https://phish-n-chips25.github.io/challenge3-pitch/
+// GitHub Pages project site: https://phish-n-chips25.github.io/docs/
 // Vercel / domínio próprio / user-page (phish-n-chips25.github.io) -> base: '/'
-// Project page no GitHub Pages -> base: '/challenge3-pitch/'
+// Project page no GitHub Pages -> base: '/docs/'
 const isGhPages = process.env.DEPLOY_TARGET === 'gh-pages'
 export default defineConfig({
   plugins: [react()],
-  base: isGhPages ? '/challenge3-pitch/' : '/',
+  base: isGhPages ? '/docs/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
